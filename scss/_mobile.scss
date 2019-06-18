@@ -29,10 +29,6 @@
       text-align: center;
       justify-content: center;
     }
-
-    h1 {
-      margin-bottom: 1rem;
-    }
   }
 
   .dash-buttons a {
@@ -51,20 +47,6 @@
     }
   }
 
-  .profile-grid {
-    grid-template-areas:
-      "top"
-      "about"
-      "exp"
-      "edu"
-      "github";
-  }
-
-  .profile-about {
-    .skills {
-      flex-direction: column;
-    }
-  }
   .post {
     grid-template-columns: 1fr;
 

@@ -2,6 +2,8 @@
 @import "utilities";
 @import "form";
 
+@import "home";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -12,9 +14,21 @@ body {
   font-family: "Raleway";
   font-size: 1rem;
   line-height: 1.6;
-  background-color: #ab2b47;
-  //color: #333;
+  background-color: $brand-color;
   color: #fceff4;
+  margin-top: 6rem; // room for header
+
+  // &::after {
+  //   content: "";
+  //   background: url("/dist/img/logo.svg") no-repeat center / 30%;
+  //   opacity: 0.3;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   position: fixed;
+  //   z-index: -1;
+  // }
 }
 
 a {
@@ -35,7 +49,7 @@ img {
 .navbar {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   padding: 0.7rem 2rem;
   position: fixed;
   z-index: 1;
@@ -43,9 +57,14 @@ img {
   top: 0;
   border-bottom: solid 1px $primary-color;
   opacity: 0.9;
+  z-index: 4;
 
   ul {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 900px;
   }
 
   a {
@@ -66,17 +85,17 @@ img {
   //background: url("/dist/img/logo.svg") no-repeat center / 20%;
   height: 100vh;
 
-  &::after {
-    content: "";
-    background: url("/dist/img/logo.svg") no-repeat center / 20% fixed;
-    opacity: 0.5;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-  }
+  // &::after {
+  //   content: "";
+  //   background: url("/dist/img/logo.svg") no-repeat center / 20% fixed;
+  //   opacity: 0.5;
+  //   top: 0;
+  //   left: 0;
+  //   bottom: 0;
+  //   right: 0;
+  //   position: absolute;
+  //   z-index: -1;
+  // }
 
   &-inner {
     color: #fff;
@@ -94,6 +113,140 @@ img {
 .logo {
   width: 100px;
   margin: auto;
+}
+
+// Footah
+footer {
+  font-family: "Barlow Semi Condensed";
+  font-weight: 300;
+
+  .footer-card {
+    display: grid;
+    position: relative;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-areas:
+      ". top top"
+      ". bottom bottom";
+    grid-gap: 1rem;
+    background-color: $brand-color;
+    border-radius: 10px;
+    width: 550px;
+    margin: auto;
+    padding: 1rem;
+    overflow: hidden;
+
+    p {
+      line-height: 1.4;
+    }
+
+    .footer-card-top,
+    .footer-card-bottom {
+      z-index: 2;
+    }
+
+    .footer-card-top {
+      grid-area: top;
+      text-align: right;
+
+      p:first-child {
+        font-size: 1.75rem;
+        font-weight: 500;
+      }
+    }
+    .footer-card-bottom {
+      grid-area: bottom;
+      text-align: left;
+
+      p:first-child {
+        font-size: 2rem;
+        font-weight: 500;
+        line-height: 1.6;
+      }
+
+      p {
+        white-space: pre;
+      }
+    }
+
+    // puzzle pieces
+    img {
+      position: absolute;
+      width: 123px;
+      z-index: 0;
+      filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, 0.2));
+
+      &:nth-of-type(1) {
+        // bluegreen
+        transform: rotate(120deg);
+        bottom: -138px;
+        left: -121px;
+      }
+      &:nth-of-type(2) {
+        // tan
+        transform: rotate(230deg);
+        top: -122px;
+        left: 178px;
+      }
+      &:nth-of-type(3) {
+        // orange
+        transform: rotate(-169deg);
+        top: 171px;
+        left: -123px;
+      }
+      &:nth-of-type(4) {
+        // yellow
+        transform: rotate(-300deg);
+        bottom: 107px;
+        right: -204px;
+      }
+    }
+  }
+}
+
+.slide1 {
+  animation: slide1 1s cubic-bezier(0.25, 0.25, 0, 1.015) forwards;
+  animation-delay: 0.3s;
+}
+.slide2 {
+  animation: slide2 0.6s cubic-bezier(0.25, 0.25, 0, 1.015) forwards;
+  animation-delay: 0.5s;
+}
+.slide3 {
+  animation: slide3 0.85s cubic-bezier(0.25, 0.25, 0, 1.015) forwards;
+  animation-delay: 0.1s;
+}
+.slide4 {
+  animation: slide4 1.25s cubic-bezier(0.25, 0.25, 0, 1.015) forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes slide1 {
+  100% {
+    transform: rotate(0deg);
+    bottom: -38px;
+    left: -21px;
+  }
+}
+@keyframes slide2 {
+  100% {
+    transform: rotate(0deg);
+    top: -22px;
+    left: 78px;
+  }
+}
+@keyframes slide3 {
+  100% {
+    transform: rotate(0deg);
+    top: 71px;
+    left: -23px;
+  }
+}
+@keyframes slide4 {
+  100% {
+    transform: rotate(0deg);
+    bottom: 7px;
+    right: -24px;
+  }
 }
 
 @import "mobile";
