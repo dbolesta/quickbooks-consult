@@ -1,3 +1,7 @@
+@import "config";
+@import "utilities";
+@import "form";
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,11 +17,8 @@ body {
   margin-top: 6rem; // room for header
 }
 
-@import "config";
-@import "utilities";
-@import "form";
-
 @import "home";
+@import "clients";
 
 a {
   text-decoration: none;
@@ -108,87 +109,95 @@ footer {
   font-family: "Barlow Semi Condensed";
   font-weight: 300;
 
-  .footer-card {
-    display: grid;
-    position: relative;
-    grid-template-columns: 1fr 3fr 1fr;
-    grid-template-areas:
-      ". top top"
-      ". bottom bottom";
-    grid-gap: 1rem;
-    background-color: $brand-color;
-    border-radius: 10px;
-    width: 550px;
+  .footer-card-container {
+    max-width: 1100px;
     margin: auto;
-    padding: 1rem;
     overflow: hidden;
+    padding: 2rem;
+    font-size: 1.4rem;
 
-    p {
-      line-height: 1.4;
-    }
-
-    .footer-card-top,
-    .footer-card-bottom {
-      z-index: 2;
-    }
-
-    .footer-card-top {
-      grid-area: top;
-      text-align: right;
-
-      p:first-child {
-        font-size: 1.75rem;
-        font-weight: 500;
-      }
-    }
-    .footer-card-bottom {
-      grid-area: bottom;
-      text-align: left;
-
-      p:first-child {
-        font-size: 2rem;
-        font-weight: 500;
-        line-height: 1.6;
-      }
+    .footer-card {
+      display: grid;
+      position: relative;
+      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-areas:
+        ". top top"
+        ". bottom bottom";
+      grid-gap: 1rem;
+      background-color: $brand-color;
+      border-radius: 10px;
+      width: 550px;
+      margin: auto;
+      padding: 1rem;
+      overflow: hidden;
 
       p {
-        white-space: pre;
+        line-height: 1.4;
       }
-    }
 
-    // puzzle pieces
-    img {
-      position: absolute;
-      width: 123px;
-      z-index: 0;
-      filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, 0.2));
+      .footer-card-top,
+      .footer-card-bottom {
+        z-index: 2;
+      }
 
-      &:nth-of-type(1) {
-        // bluegreen
-        transform: rotate(120deg);
-        bottom: -138px;
-        left: -121px;
+      .footer-card-top {
+        grid-area: top;
+        text-align: right;
+
+        p:first-child {
+          font-size: 1.75rem;
+          font-weight: 500;
+        }
       }
-      &:nth-of-type(2) {
-        // tan
-        transform: rotate(230deg);
-        top: -122px;
-        left: 178px;
+      .footer-card-bottom {
+        grid-area: bottom;
+        text-align: left;
+
+        p:first-child {
+          font-size: 2rem;
+          font-weight: 500;
+          line-height: 1.6;
+        }
+
+        p {
+          white-space: pre;
+        }
       }
-      &:nth-of-type(3) {
-        // orange
-        transform: rotate(-169deg);
-        top: 171px;
-        left: -123px;
-      }
-      &:nth-of-type(4) {
-        // yellow
-        transform: rotate(-300deg);
-        bottom: 107px;
-        right: -204px;
-      }
-    }
-  }
+
+      // puzzle pieces
+      img {
+        position: absolute;
+        width: 123px;
+        z-index: 0;
+        filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, 0.2));
+
+        &:nth-of-type(1) {
+          // bluegreen
+          transform: rotate(120deg);
+          bottom: -138px;
+          left: -121px;
+        }
+        &:nth-of-type(2) {
+          // tan
+          transform: rotate(230deg);
+          top: -122px;
+          left: 178px;
+        }
+        &:nth-of-type(3) {
+          // orange
+          transform: rotate(-169deg);
+          top: 171px;
+          left: -123px;
+        }
+        &:nth-of-type(4) {
+          // yellow
+          transform: rotate(-300deg);
+          bottom: 107px;
+          right: -204px;
+        }
+      } // img
+    } // .footer-card
+  } // .footer-card-container
 }
 
 .slide1 {
