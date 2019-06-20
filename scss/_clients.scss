@@ -51,6 +51,23 @@ ul.industry-list {
       position: relative;
       overflow: hidden;
 
+      &.quote-scheme1 {
+        border-left-color: $puzzle-color1;
+        background-color: lighten($puzzle-color1, 35%);
+      }
+      &.quote-scheme2 {
+        border-left-color: $puzzle-color2;
+        background-color: lighten($puzzle-color2, 35%);
+      }
+      &.quote-scheme3 {
+        border-left-color: $puzzle-color3;
+        background-color: lighten($puzzle-color3, 35%);
+      }
+      &.quote-scheme4 {
+        border-left-color: $puzzle-color4;
+        background-color: lighten($puzzle-color4, 35%);
+      }
+
       i {
         position: absolute;
         opacity: 0.1;

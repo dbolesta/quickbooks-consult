@@ -1,3 +1,6 @@
+// puzzle animation
+
+// apply css animation classes to each puzzle piece image
 function puzzleAnim() {
   let puzzlePics = document.querySelectorAll(".footer-card img");
   puzzlePics.forEach((x, i) => {
@@ -5,6 +8,8 @@ function puzzleAnim() {
   });
 }
 
+// vars to help detect position of footer relative to viewport
+// to activate animation only once used has footer in view
 let ticking = false;
 let viewHeight = document.documentElement.clientHeight;
 let footer = document.querySelector(".footer-card");
@@ -27,6 +32,7 @@ const filters = document.querySelectorAll(".industry-list li");
 const clients = document.querySelectorAll(".client-list .client");
 let selectedFilters = [];
 
+// add click listener to each filter li
 filters.forEach(el => {
   el.addEventListener("click", e => {
     let clientFilters = updateFilters(e);
@@ -34,6 +40,8 @@ filters.forEach(el => {
   });
 });
 
+// remove or apply .active class to change style of selected filters
+// also add data attr to selectedFilters array, to see what industries to show
 function updateFilters(e) {
   if (!e.target.classList.contains("active")) {
     e.target.classList.add("active");
@@ -48,6 +56,7 @@ function updateFilters(e) {
   return selectedFilters;
 }
 
+// use selectedFilters array
 function updateClients(arr) {
   clients.forEach(client => {
     if (arr.length === 0) {

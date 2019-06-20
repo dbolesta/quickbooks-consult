@@ -14,7 +14,7 @@ body {
   line-height: 1.6;
   background-color: $brand-color;
   color: #fceff4;
-  margin-top: 6rem; // room for header
+  margin-top: 5rem; // room for header
 }
 
 @import "home";
@@ -31,6 +31,41 @@ ul {
 
 img {
   width: 100%;
+}
+
+// header and content
+
+.main-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  &::after {
+    content: "";
+    background: url(/dist/img/logo.svg) no-repeat center/contain;
+    opacity: 0.3;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+  }
+
+  div {
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+}
+
+.primary-content {
+  box-shadow: 0 5px 10px rgba(154, 160, 185, 0.05),
+    0 15px 40px rgba(166, 173, 201, 0.2);
+  border-radius: 10px;
 }
 
 // Navbar

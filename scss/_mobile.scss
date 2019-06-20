@@ -3,8 +3,20 @@
     display: none;
   }
 
+  body {
+    margin-top: 4rem;
+  }
+
   .container {
-    margin-top: 8rem;
+    padding: 0 0.25rem;
+  }
+
+  .main-header {
+    margin-bottom: 1rem;
+
+    div {
+      font-size: 1.2rem;
+    }
   }
 
   //text
@@ -15,9 +27,18 @@
   .large {
     font-size: 2rem;
   }
+  .normal-header {
+    font-size: 1.5rem;
+    line-height: 1;
+  }
 
   .lead {
     font-size: 1rem;
+  }
+
+  // utilities???
+  .p-2 {
+    padding: 1rem;
   }
 
   // navbar
@@ -37,22 +58,116 @@
     margin-bottom: 0.2rem;
   }
 
-  // Profiles
-  .profile {
-    grid-template-columns: 1fr;
-    text-align: center;
+  // Clients
+  .client-list {
+    .client {
+      margin: 2rem 0rem;
+    }
+    .client-desc {
+      font-size: 1rem;
+      margin: 1rem 0;
+    }
+    .client-quote {
+      font-size: 1rem;
+      padding: 1rem;
 
-    ul {
-      display: none;
+      i {
+        font-size: 5rem;
+      }
     }
   }
 
-  .post {
-    grid-template-columns: 1fr;
+  // footah
+  footer {
+    .footer-card-container {
+      padding: 0.5rem;
+      font-size: 1rem;
 
-    a,
-    button {
-      padding: 0.3rem 0.4rem;
+      .footer-card {
+        grid-template-columns: 1fr 10fr 1fr;
+        width: 300px;
+
+        p {
+          line-height: 1.4;
+        }
+
+        .footer-card-top {
+          p:first-child {
+            font-size: 1.3rem;
+          }
+        }
+        .footer-card-bottom {
+          p:first-child {
+            font-size: 1.3rem;
+            line-height: 1.4;
+          }
+
+          p {
+            white-space: pre;
+          }
+        }
+
+        // puzzle pieces
+        img {
+          width: 85px;
+          z-index: 0;
+          filter: drop-shadow(0px 3px 1px rgba(0, 0, 0, 0.2));
+
+          &:nth-of-type(1) {
+            // bluegreen
+            transform: rotate(120deg);
+            bottom: -138px;
+            left: -121px;
+          }
+          &:nth-of-type(2) {
+            // tan
+            transform: rotate(230deg);
+            top: -122px;
+            left: 178px;
+          }
+          &:nth-of-type(3) {
+            // orange
+            transform: rotate(-169deg);
+            top: 171px;
+            left: -123px;
+          }
+          &:nth-of-type(4) {
+            // yellow
+            transform: rotate(-300deg);
+            bottom: 107px;
+            right: -204px;
+          }
+        } // img
+      } // .footer-card
+    } // .footer-card-container
+  }
+
+  @keyframes slide1 {
+    100% {
+      transform: rotate(0deg);
+      bottom: -26px;
+      left: -8px;
     }
   }
-}
+  @keyframes slide2 {
+    100% {
+      transform: rotate(0deg);
+      top: -31px;
+      left: 44px;
+    }
+  }
+  @keyframes slide3 {
+    100% {
+      transform: rotate(0deg);
+      top: 35px;
+      left: -20px;
+    }
+  }
+  @keyframes slide4 {
+    100% {
+      transform: rotate(0deg);
+      bottom: 6px;
+      right: -17px;
+    }
+  }
+} // end of media query
